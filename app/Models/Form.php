@@ -10,7 +10,6 @@ class Form extends Model
     use HasFactory;
 
    protected $fillable = [
-
     'rec_id',
     'name',
     'email',

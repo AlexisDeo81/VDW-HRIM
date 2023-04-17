@@ -5,12 +5,12 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
+                        <a href="/"><img src="assets/images/logo/logo.png" alt="Logo"></a>
                     </div>
                     {{-- message --}}
                     {!! Toastr::message() !!}
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                    <p class="auth-subtitle mb-5"></p>
                     @if(session()->has('error'))
                         <div class="text-danger text-center text-bold">
                             {{ session()->get('error') }}
@@ -50,9 +50,9 @@
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600">Don't have an account? <a href="{{route('register')}}"
+                        <!-- <p class="text-gray-600">Don't have an account? <a href="{{route('register')}}"
                                 class="font-bold">Sign
-                                up</a>.</p>
+                                up</a>.</p> -->
                         <p><a class="font-bold" href="{{ route('forget-password') }}">Forgot password?</a>.</p>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-@extends('sidebar.activity_log')
+@extends('sidebar.employeemanagement')
 @endsection
 @section('content')
 <div id="main">
@@ -29,14 +29,13 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    Log Datatable
+                    Log Data Table
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
                                 <th>Email</th>
                                 <th>Description</th>
                                 <th>Date Time</th>
@@ -46,7 +45,6 @@
                             @foreach ($activityLog as $key => $item)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->description }}</td>
                                     <td>{{ $item->date_time }}</td>
@@ -58,16 +56,5 @@
             </div>
         </section>
     </div>
-    <footer>
-        <div class="footer clearfix mb-0 text-muted ">
-            <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
-            </div>
-            <div class="float-end">
-                <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
-            </div>
-        </div>
-    </footer>
 </div>
 @endsection

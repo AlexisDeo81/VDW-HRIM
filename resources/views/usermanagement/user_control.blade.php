@@ -51,7 +51,7 @@
                             @foreach ($data as $key => $item)
                                 <tr>
                                     <td class="id">{{ ++$key }}</td>
-                                    <td class="name">{{ $item->name }}</td>
+                                    <td class="name">{{ $item->first_name }}</td>
                                     <td class="name">
                                         <div class="avatar avatar-xl">
                                             <img src="{{ URL::to('/images/'. $item->avatar) }}" alt="{{ $item->avatar }}">
@@ -78,9 +78,9 @@
                                     <td class="role_name"><span  class=" badge bg-warning">{{ $item->role_name }}</span></td>
                                     @endif
                                     <td class="text-center">
-                                        <a href="{{ route('user/add/new') }}">
+                                        <!-- <a href="{{ route('user/add/new') }}">
                                             <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
-                                        </a>
+                                        </a> -->
                                         <a href="{{ url('view/detail/'.$item->id) }}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>  
@@ -94,16 +94,6 @@
             </div>
         </section>
     </div>
-    <footer>
-        <div class="footer clearfix mb-0 text-muted ">
-            <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
-            </div>
-            <div class="float-end">
-                <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
-            </div>
-        </div>
-    </footer>
+    
 </div>
 @endsection

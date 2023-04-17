@@ -19,7 +19,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+
+        'first_name',
+        'middle_name',
+        'last_name',
+        'line_manager',
+        'maxicare_card_number',
+        'maxicare_policy_number',
+        'job_title',
+        'job_status',
+        'status',
+        'start_date',
+        'end_date',
         'avatar',
         'email',
         'role_name',

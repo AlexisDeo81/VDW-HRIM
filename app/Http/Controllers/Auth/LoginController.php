@@ -97,7 +97,7 @@ class LoginController extends Controller
         Session::put('user', $user);
         $user=Session::get('user');
 
-        $name       = $user->name;
+        $name       = $user->first_name;
         $email      = $user->email;
         $dt         = Carbon::now();
         $todayDate  = $dt->toDayDateTimeString();

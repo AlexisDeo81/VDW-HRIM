@@ -21,7 +21,7 @@ class CreateUserTypesTable extends Migration
 
         DB::table('user_types')->insert([
             ['type_name' => 'Active'],
-            ['type_name' => 'Disable']
+            ['type_name' => 'Inactive']
         ]);
     }
 

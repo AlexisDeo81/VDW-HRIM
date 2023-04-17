@@ -12,7 +12,7 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Menu</li>
+                <li class="sidebar-title">Menus</li>
 
                 <li class="sidebar-item">
                     <a href="{{ route('home') }}" class='sidebar-link'>
@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="badges">
                             @if (Auth::user()->role_name=='Admin')
-                            <span>Name: <span class="fw-bolder">{{ Auth::user()->name }}</span></span>
+                            <span>Name: <span class="fw-bolder">{{ Auth::user()->first_name }}</span></span>
                             <hr>
                             <span>Role Name:</span>
                             <span class="badge bg-success">Admin</span>
@@ -44,41 +44,41 @@
                         </div>
                     </div>
                 </li>
-                <li class="sidebar-item">
+                <!-- <li class="sidebar-item">
                     <a href="{{ route('change/password') }}" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>Chnage Password</span>
                     </a>
-                </li>
+                </li> -->
                 
                 @if (Auth::user()->role_name=='Admin')
-                    <li class="sidebar-title">Page &amp; Controller</li>
+                    <!-- <li class="sidebar-title">Page &amp; Controller</li>
                     <li class="sidebar-item  has-sub active">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-hexagon-fill"></i>
                             <span>Maintenain</span>
-                        </a>
-                        <ul class="submenu active">
+                        </a> -->
+                        <!-- <ul class="submenu active">
                             <li class="submenu-item active">
                                 <a href="{{ route('userManagement') }}">User Control</a>
-                            </li>
-                            <li class="submenu-item">
+                            </li> -->
+                            <!-- <li class="submenu-item">
                                 <a href="{{ route('activity/log') }}">User Activity Log</a>
                             </li>
                             <li class="submenu-item">
                                 <a href="{{ route('activity/login/logout') }}">Activity Log</a>
-                            </li>
-                        </ul>
-                    </li>
+                            </li> -->
+                        <!-- </ul>
+                    </li> -->
                 @endif
                 <li class="sidebar-item">
-                    <a href="{{ route('change/password') }}" class='sidebar-link'>
+                    <!-- <a href="{{ route('change/password') }}" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>Chnage Password</span>
-                    </a>
+                    </a> -->
                 </li>
 
-                <li class="sidebar-title">Forms &amp; Tables</li>
+                <!-- <li class="sidebar-title">Forms &amp; Tables</li>
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
@@ -99,7 +99,7 @@
                         <li class="submenu-item">
                             <a href="{{ route('form/view/detail') }}">View Detail</a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <li class="sidebar-item">
                         <a href="{{ route('logout') }}" class='sidebar-link'>
                             <i class="bi bi-box-arrow-right"></i>
