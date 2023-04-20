@@ -423,10 +423,10 @@
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h5>{{ $item->subject }}</h5>      
                                                     <p class="container">{!!$item->announcement!!}</p>
-                                                    <div class="text-container">
+                                                    <!-- <div class="text-container">
                                                     Loremsss ipsum dolor sit amet, consectetur adipiscing elit. Sed ac urna vel ipsum maximus vehicula in at libero.
                                                     </div>
-                                                    <button class="read-more">Read More</button>
+                                                    <button class="read-more">Read More</button> -->
                                                 </div>
                                                 
                                             </div>

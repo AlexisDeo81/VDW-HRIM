@@ -67,9 +67,7 @@
                                     
                                     
                                     <td class="name">Admin</td>
-                                    <td class="node-text"><span class="" style="max-width: 120px;">
-                                    {!! $item->announcement !!}
-</span></td>
+                                    <td class="">{!! $item->announcement !!}</td>
                                     <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
                                     @if($item->show =='0')
                                     <td class="status"><span class="bi bi-check-circle green-color"></span></td>
