@@ -536,7 +536,6 @@ ul.timeline > li:before {
                                                     <th>Start Date</th>
                                                     <th>End Date</th>
                                                     <th>ACTION</th>
-                                                    <th>ID</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -555,7 +554,6 @@ ul.timeline > li:before {
 
 
 
-                                             <td class="name">{{ $item->id }}</td>
                                              <td>
                                                 
                                              <a href="{{ url('clientEmployeeDelete/'.$item->client_employ_id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
@@ -707,6 +705,14 @@ ul.timeline > li:before {
                                     </td>
                                     @endif
 
+                                    @if($item->extension =='docx')
+                                    <td class="name">
+                                        <div class="card" style="width: 3.5em; height: 2.5em;">
+                                            <img src="{{url('/extension/word.png')}}">
+                                        </div>
+                                    </td>
+                                    @endif
+
                                     <td class="name">{{ $item->name }}</td>
 
                                     <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
@@ -744,7 +750,7 @@ ul.timeline > li:before {
                                         </div>
                                         <div class="tab-pane fade" id="employeenotes" role="tabpanel"
                                             aria-labelledby="contact-tab">
-                                            <br>
+                                            
                                         
                                     <div class="container mt-5 mb-5">
                                         <div class="row">
@@ -851,6 +857,8 @@ ul.timeline > li:before {
                                     </div>
                                 <div class="tab-pane fade" id="password" role="tabpanel"
                             aria-labelledby="contact-tab">
+                         <br>
+                         <br>
                          <br>
                                         
                         <form class="form form-horizontal" action="{{ route('change/password/db') }}" method="POST" enctype="multipart/form-data">

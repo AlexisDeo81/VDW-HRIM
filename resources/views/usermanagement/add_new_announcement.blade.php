@@ -171,4 +171,53 @@
                 console.error( error );
             } );
 </script>
+
+<script>
+    var editor = new Quill('#editor', {
+    modules: {
+        toolbar: [
+            [{ 'header': [1, 2, 3, false] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'color': [] }, { 'background': [] }],
+            [{ 'align': [] }],
+            ['link', 'image'],
+            ['clean']
+        ],
+        imageDrop: true,
+        imageResize: {
+            displaySize: true
+        },
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
+});
+
+// handle image upload
+editor.getModule('toolbar').addHandler('image', function() {
+    var input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.onchange = function() {
+        var file = input.files[0];
+        var formData = new FormData();
+        formData.append('image', file);
+        formData.append('_token', '{{ csrf_token() }}');
+        $.ajax({
+            url: '/upload-image',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                var range = editor.getSelection(true);
+                editor.insertEmbed(range.index, 'image', response.url);
+            },
+            error: function() {
+                alert('Could not upload image');
+            }
+        });
+    };
+    input.click();
+});
+</script>
 @endsection

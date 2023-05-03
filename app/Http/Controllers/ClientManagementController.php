@@ -56,11 +56,11 @@ class ClientManagementController extends Controller
             'fname'      => 'required|string|max:255',
             'lname'      => 'required|string|max:255',
             'email_address'     => 'required|string|email|max:255|unique:clients',
-            'skype'      => 'required|string|max:255',
-            'company_name'      => 'string|max:255',
-            'job_description'      => 'string|max:255',
+            // 'skype'      => 'string|max:255',
+            // 'company_name'      => 'string|max:255',
+            // 'job_description'      => 'string|max:255',
             'status'      => 'required',
-            'notes'      => 'required',
+            // 'notes'      => 'required',
             'start_date'      => 'date',
             // 'end_date'      => 'date',
         ]);
@@ -97,14 +97,14 @@ class ClientManagementController extends Controller
             'fname'      => 'required|string|max:255',
             'lname'      => 'required|string|max:255',
             'email_address'     => 'required|string|email|max:255',
-            // 'email_address'     => 'required|string|email|max:255|unique:clients',
-            'skype'      => 'required|string|max:255',
-            'company_name'      => 'string|max:255',
-            'job_description'      => 'string|max:255',
+            // 'skype'      => 'string|max:255',
+            // 'company_name'      => 'string|max:255',
+            // 'job_description'      => 'string|max:255',
             'status'      => 'required',
-            'notes'      => 'required',
+            // 'notes'      => 'required',
             'start_date'      => 'date',
             // 'end_date'      => 'date',
+            
         ]);
 
         $roleName       = $user->role_name;

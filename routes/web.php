@@ -151,7 +151,11 @@ Route::post('clientEmployeeUpdate', [App\Http\Controllers\UserManagementControll
 Route::get('viewEmployeeDocument/detail/{id}', [App\Http\Controllers\UserManagementController::class, 'viewDetailEmployDocuments'])->middleware('auth');   
 Route::post('documentEmployeeUpdate', [App\Http\Controllers\UserManagementController::class, 'updateDocumentEmploy'])->name('documentEmployeeUpdate');
 
-
+Route::post('/upload-image', function(Request $request) {
+    $path = $request->file('image')->store('public/images');
+    $url = Storage::url($path);
+    return response()->json(['url' => $url]);
+})->name('upload-image');
 
 Route::get('announcement', [App\Http\Controllers\AnnouncementController::class, 'index'])->middleware('auth')->name('announcement');
 Route::get('announcement/add', [App\Http\Controllers\AnnouncementController::class, 'addNewAnnouncement'])->middleware('auth')->name('announcement/add');

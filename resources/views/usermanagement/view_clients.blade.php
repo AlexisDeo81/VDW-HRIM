@@ -163,16 +163,18 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="text" class="form-control @error('job_description') is-invalid @enderror"
-                                                    placeholder="Job Description" id="" name="job_description" value="{{ $data[0]->job_description }}">
+                                                <!-- <input type="text" class="form-control"
+                                                    placeholder="First Name" id="" name="notes" value="{{ $data[0]->notes }}"> -->
+                                                <textarea class="form-control edit @error('job_description') is-invalid @enderror" id="editor6"
+                                                rows="3" name="job_description">{{ $data[0]->job_description }}</textarea>
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-briefcase-fill"></i>
+                                                    <!-- <i class="bi bi-person-lines-fill"></i> -->
                                                 </div>
                                                 @error('job_description')
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
+                                                <strong>{{ $message }}</strong>
                                                 </span>
-                                                 @enderror
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -302,6 +304,13 @@
     <script>
         ClassicEditor
             .create( document.querySelector( '#editor5' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor6' ) )
             .catch( error => {
                 console.error( error );
             } );

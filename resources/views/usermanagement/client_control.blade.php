@@ -3,6 +3,7 @@
 @extends('sidebar.employeemanagement')
 @endsection
 @section('content')
+
 <div id="main">
     <header class="mb-3">
         <a href="#" class="burger-btn d-block d-xl-none">
@@ -44,10 +45,10 @@
                                 <th>Email Address</th>
                                 <th>Skype</th>
                                 <th>Company</th>
-                                <th>Job Description</th>
+                                <!-- <th>Job Description</th> -->
                                 <th>Job Status</th>
                                 <th>Start Date</th>
-                                <th>End Date</th>
+                                <!-- <th>End Date</th> -->
                                 <th class="text-center">Modify</th>
                             </tr>    
                         </thead>
@@ -58,13 +59,14 @@
                                     <!-- <td class="id">{{ ++$key }}</td> -->
                                     <td class="name">{{ $item->lname }}</td>
                                     <td class="name">{{ $item->fname }}</td>
-                                    <td class="name">{{ $item->email_address }}</td>
+                                    <!-- <td class="name">{{ $item->email_address }}</td> -->
+                                    <td class=""><span class="d-inline-block text-truncate" style="max-width: 200px;">{{ $item->email_address}}</span></td>
                                     <td class="name">{{ $item->skype}}</td>
                                     <td class="name">{{ $item->company_name}}</td>
-                                    <td class="name">{{ $item->job_description}}</td>
+                                    <!-- <td class=""><span class="d-inline-block text-truncate" style="max-width: 50px;">{{$item->job_description}}</span></td> -->
                                     <td class="name">{{ $item->status}}</td>
                                     <td class="name">{{ $item->start_date }}</td>
-                                    <td class="name">{{ $item->end_date }}</td>
+                                    <!-- <td class="name">{{ $item->end_date }}</td> -->
                                     
                                 
 
@@ -72,6 +74,7 @@
                                         <a href="{{ url('client/add/new') }}">
                                             <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
                                         </a>
+                                       
                                         <a href="{{ url('view/clientDetail/'.$item->id) }}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>  

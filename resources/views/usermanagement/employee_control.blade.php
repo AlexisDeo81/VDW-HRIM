@@ -89,7 +89,7 @@
                                         <a href="{{ url('view/detail/'.$item->id) }}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>  
-                                        <a href="{{ url('delete_user/'.$item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        <!-- <a href="{{ url('delete_user/'.$item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a> -->
                                     </td>
                                 </tr>
                             @endforeach

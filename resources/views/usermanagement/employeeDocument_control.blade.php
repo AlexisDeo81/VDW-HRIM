@@ -65,6 +65,14 @@
                                     </td>
                                     @endif
 
+                                    @if($item->extension =='docx')
+                                    <td class="name">
+                                        <div class="card" style="width: 3.5em; height: 2.5em;">
+                                            <img src="{{url('/extension/word.png')}}">
+                                        </div>
+                                    </td>
+                                    @endif
+
                                     <td class="name">{{ $item->name }}</td>
 
                                     <td class="name">{{ $item->first_name }} {{$item->last_name}}</td>

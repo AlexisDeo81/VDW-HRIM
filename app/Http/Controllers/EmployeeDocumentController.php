@@ -57,7 +57,7 @@ class EmployeeDocumentController extends Controller
 
         $request->validate([
             // 'path' => 'required|csv,txt,xlx,xls,pdf|max:2048',
-            'path' =>'required|mimes:xls,xlsx,pdf',
+            'path' =>'required|mimes:xls,xlsx,pdf,docx',
             'name'      => 'required|string|max:255',
             'show_to_employees'      => 'required',
             'type'      => 'required',
@@ -120,7 +120,7 @@ class EmployeeDocumentController extends Controller
             // 'path' => 'required|csv,txt,xlx,xls,pdf|max:2048',
             'path' =>'required|mimes:xls,xlsx,pdf',
             'name'      => 'required|string|max:255',
-            'employee_name'      => 'required|string|max:255',
+            // 'employee_name'      => 'required|string|max:255',
             // 'show_to_employees'      => 'required',
             'type'      => 'required',
         ]);

@@ -137,7 +137,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <select class="form-select @error('employee_name') is-invalid @enderror" name="user_name" id="user_id">
+                                                <select class="form-select @error('employee_name') is-invalid @enderror" name="employee_name" id="employee_name">
                                                 <option selected disabled>Select Employee Name</option>
                                                 @foreach ($employee as $key => $value)
                                                 <option value="{{ $value->id }}"> {{ $value->first_name .' '. $value->last_name}}</option>

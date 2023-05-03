@@ -159,9 +159,9 @@
                             <li class="submenu-item">
                                 <a href="{{ route('activity/login/logout') }}">Activity Login & Logout</a>
                             </li>
-                            <li class="submenu-item">
+                            <!-- <li class="submenu-item">
                                 <a href="{{ route('activity/log') }}">User Activity Log</a>
-                            </li>
+                            </li> -->
                             <!-- <li class="submenu-item">
                                 <a href="#">Line Managers</a>
                             </li> -->

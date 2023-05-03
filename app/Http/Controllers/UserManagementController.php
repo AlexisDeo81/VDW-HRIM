@@ -251,11 +251,11 @@ class UserManagementController extends Controller
             'image' => 'required',
             'first_name'      => 'required',
             'first_name'      => 'required|string|max:255',
-            'middle_name'      => 'required|string|max:255',
+            // 'middle_name'      => 'string|max:255',
             'last_name'      => 'required|string|max:255',
             'line_manager'      => 'required|string',
-            'maxicare_card_number'      => 'required',
-            'maxicare_policy_number'      => 'required',
+            // 'maxicare_card_number'      => 'required',
+            // 'maxicare_policy_number'      => 'required',
             'job_title'      => 'required|string',
             'job_status'      => 'required|string',
             'status'      => 'required|string',
@@ -265,7 +265,7 @@ class UserManagementController extends Controller
             'email'     => 'required|string|email|max:255|unique:users',
             'password'  => 'required|string|min:7|confirmed',
             'password_confirmation' => 'required',
-            'notes' => 'required',
+            // 'notes' => 'required',
         ]);
 
         $image = time().'.'.$request->image->extension();  
@@ -286,7 +286,9 @@ class UserManagementController extends Controller
         $user->start_date        = $request->start_date;
         $user->end_date        = $request->end_date;
         $user->role_name    = $request->role_name;
+        $user->notes    = $request->notes;
         $user->password     = Hash::make($request->password);
+       
  
         $user->save();
 
@@ -335,13 +337,13 @@ class UserManagementController extends Controller
           $request->validate([
             'image' => 'required',
             'first_name'      => 'required|string|max:255',
-            'middle_name'      => 'required|string|max:255',
+            // 'middle_name'      => 'required|string|max:255',
             'last_name'      => 'required|string|max:255',
             'email'     => 'required',
             
             'line_manager'      => 'required|string',
-            'maxicare_card_number'      => 'required',
-            'maxicare_policy_number'      => 'required',
+            // 'maxicare_card_number'      => 'required',
+            // 'maxicare_policy_number'      => 'required',
             'job_title'      => 'required|string',
 
             'job_status'      => 'required|string',
@@ -351,7 +353,7 @@ class UserManagementController extends Controller
             'start_date'      => 'required',
             // 'password'  => 'required|string|min:7|confirmed',
             // 'password_confirmation' => 'required',
-            'notes' => 'required',
+            // 'notes' => 'required',
         ]);
         
     

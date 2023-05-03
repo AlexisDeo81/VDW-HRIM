@@ -394,6 +394,7 @@
             </div>
         </section>
       <div class="col-md-5 float-end">
+        <!-- Admin Announcement !-->
       <div class="card">
                                 <div class="card-header">
                                     <h4>Announcements</h4>
@@ -421,8 +422,10 @@
                                             <div class="carousel-item item @if ($loop->first) active @endif">
                                                 <img src="assets/images/samples/announcement_bgf.png" class="d-block w-100" alt="...">
                                                 <div class="carousel-caption d-none d-md-block">
-                                                    <h5>{{ $item->subject }}</h5>      
-                                                    <p class="container">{!!$item->announcement!!}</p>
+                                                    <h5>{{ $item->subject }}</h5>    
+                                                    <span class="d-inline-block text-truncate" style="max-width: 300px;">{!! $item->announcement!!}</span>
+                                                    
+                                                    <p id="my-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
                                                     <!-- <div class="text-container">
                                                     Loremsss ipsum dolor sit amet, consectetur adipiscing elit. Sed ac urna vel ipsum maximus vehicula in at libero.
                                                     </div>
@@ -487,7 +490,8 @@
 <div class="tab-content">
   <div class="tab-pane fade show active" id="pills-general" role="tabpanel" aria-labelledby="tab-general">
   <div class="card-body">
-                    <table class="table table-striped">
+                <div style="height: 550px; overflow-y: scroll;">
+                    <table class="table table-striped" >
                         <thead>
                             <tr>
                                 <th></th>
@@ -933,29 +937,53 @@
             </div>
         </section>
       <div class="col-md-5 float-end">
+        <!-- Employee Announcement !-->
       <div class="card">
                                 <div class="card-header">
                                     <h4>Announcements</h4>
                                     <p></p>
                                 </div>
                                 <div class="card-body">
+                                    
+
                                     <div id="carouselExampleFade" class="carousel slide carousel-fade"
                                         data-bs-ride="carouselfade">
+
                                         <ol class="carousel-indicators">
-                                            <li data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
+                                            
+                                            <!-- <li data-bs-target="#carouselExampleFade" data-bs-slide-to="0"
                                                 class="active"></li>
                                             <li data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></li>
-                                            <li data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></li>
+                                            <li data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></li> -->
+                                        @foreach ($items as $item)
+                                            <li data-bs-target="#carouselExampleFade" data-slide-to="{{ $loop->index }}" @if ($loop->first) class="active" @endif></li>
+                                        @endforeach
                                         </ol>
+                                          <!-- <div style="height: 200px; overflow-y: scroll;"> -->
                                         <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="assets/images/samples/1.png" class="d-block w-100" alt="...">
+                                            @foreach ($items as $item)
+                                            <div class="carousel-item item @if ($loop->first) active @endif">
+                                                <img src="assets/images/samples/announcement_bgf.png" class="d-block w-100" alt="...">
                                                 <div class="carousel-caption d-none d-md-block">
-                                                    <h5>Title</h5>      
-                                                    <p class="col-19 text-truncate">Nulla vitae elit libero, a pharetra augue mollis interdum. Nulla vitae elit libero, a pharetra augue mollis interdum. Nulla vitae elit libero, a pharetra augue mollis interdum. </p>
+                                                    <h5>{{ $item->subject }}</h5>
+                                                    <p>
+                                                    {!! $item->announcement !!}</p>
+                                                    <!-- <span id="my-paragraph">
+                                                    {!! $item->announcement !!}</span> -->
+                                                    <!-- <span id="my-paragraph">{!! $item->announcement !!}</span> -->
+                                                    
+                                                    <!-- <div class="text-container">
+                                                    Loremsss ipsum dolor sit amet, consectetur adipiscing elit. Sed ac urna vel ipsum maximus vehicula in at libero.
+                                                    </div>
+                                                    <button class="read-more">Read More</button> -->
                                                 </div>
+                                                
                                             </div>
-                                            <div class="carousel-item">
+
+                                            
+                                            
+                                            @endforeach
+                                            <!-- <div class="carousel-item">
                                                 <img src="assets/images/samples/2.png" class="d-block w-100" alt="...">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h5>Second slide label</h5>
@@ -968,8 +996,10 @@
                                                     <h5>Third slide label</h5>
                                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                                                 </div>
-                                            </div>
+                                            </div> -->
+
                                         </div>
+                                        
                                         <a class="carousel-control-prev" href="#carouselExampleFade" role="button"
                                             data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -981,6 +1011,8 @@
                                             <span class="visually-hidden">Next</span>
                                         </a>
                                     </div>
+
+                                    
                                 </div>
                             </div>
                             
@@ -1004,7 +1036,8 @@
 <div class="tab-content">
   <div class="tab-pane fade show active" id="pills-general" role="tabpanel" aria-labelledby="tab-general">
   <div class="card-body">
-                    <table class="table table-striped">
+                <div style="height: 550px; overflow-y: scroll;">
+                    <table class="table table-striped" >
                         <thead>
                             <tr>
                                 <th></th>
@@ -1050,6 +1083,8 @@
                 </div>
                        
   </div>
+                       
+  </div>
   <div class="tab-pane fade" id="pills-training" role="tabpanel" aria-labelledby="tab-training">
   <div class="card-body">
                     <table class="table table-striped">
@@ -1083,18 +1118,20 @@
 @endsection
 @section('scripts')
     <script>
-        const textContainer = document.querySelector('.text-container');
-        const readMoreBtn = document.querySelector('.read-more');
-
-        readMoreBtn.addEventListener('click', function() {
-        if (textContainer.classList.contains('expanded')) {
-            textContainer.classList.remove('expanded');
-            readMoreBtn.textContent = 'Read More';
-        } else {
-            textContainer.classList.add('expanded');
-            readMoreBtn.textContent = 'Read Less';
+        var paragraph = document.getElementById("my-paragraph");
+        var words = paragraph.innerHTML.split(" ");
+        if (words.length > 10) {
+            paragraph.innerHTML = words.slice(0, 35).join(" ") + " Read more...";
         }
-        });
-
+    </script>
+    <script>
+        const maxWords = 5;
+        const myTextElement = document.getElementById("my-text");
+        const myText = myTextElement.innerHTML.trim();
+        const wordsArray = myText.split(" ");
+        const slicedArray = wordsArray.slice(0, maxWords);
+        const finalText = slicedArray.join(" ");
+        
+        myTextElement.innerHTML = finalText + " ..."; // add an ellipsis to indicate that the text has been truncated
     </script>
 @endsection
