@@ -39,16 +39,16 @@
                                 <th>Email</th>
                                 <th>Description</th>
                                 <th>Date Time</th>
-                            </tr>    
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach ($activityLog as $key => $item)
-                                <tr>
-                                    <td>{{ ++$key }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->description }}</td>
-                                    <td>{{ $item->date_time }}</td>
-                                </tr>
+                            <tr>
+                                <td>{{ ++$key }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->description }}</td>
+                                <td>{{ $item->date_time }}</td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>

@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 @section('menu')
 @extends('sidebar.usermanagement')
@@ -6,17 +5,18 @@
 @section('content')
 <div id="main">
     <style>
-        .avatar.avatar-im .avatar-content, .avatar.avatar-xl img {
-            width: 40px !important;
-            height: 40px !important;
-            font-size: 1rem !important;
-        }
-        .form-group[class*=has-icon-].has-icon-lefts .form-select {
-            padding-left: 2rem;
-        }
+    .avatar.avatar-im .avatar-content,
+    .avatar.avatar-xl img {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1rem !important;
+    }
 
+    .form-group[class*=has-icon-].has-icon-lefts .form-select {
+        padding-left: 2rem;
+    }
     </style>
-    
+
     <header class="mb-3">
         <a href="#" class="burger-btn d-block d-xl-none">
             <i class="bi bi-justify fs-3"></i>
@@ -38,7 +38,7 @@
                     </nav>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
@@ -47,33 +47,35 @@
                 <div class="card-content">
                     <div class="card-body">
 
-                    <form class="form form-horizontal" action="{{ route('announcement/add/save') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-body">
+                        <form class="form form-horizontal" action="{{ route('announcement/add/save') }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-body">
                                 <div class="row">
 
-                  
-                                <div class="col-md-4">
+
+                                    <div class="col-md-4">
                                         <label>Subject</label>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                            <input class="form-control @error('name') is-invalid @enderror" name="name" type="text" id="name" placeholder="Enter Subject">
+                                                <input class="form-control @error('name') is-invalid @enderror"
+                                                    name="name" type="text" id="name" placeholder="Enter Subject">
                                                 <div class="form-control-icon">
-                                                <i class="bi bi-person-square"></i>
+                                                    <i class="bi bi-person-square"></i>
                                                 </div>
                                                 @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                                 @enderror
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    
+
 
                                     <!-- <div class="col-md-4">
                                         <label>Announcement</label>
@@ -99,12 +101,13 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <textarea class="form-control edit @error('announcement') is-invalid @enderror" id="editor"
-                                                rows="2" name="announcement"></textarea>
-                                               
+                                                <textarea
+                                                    class="form-control edit @error('announcement') is-invalid @enderror"
+                                                    id="editor" rows="2" name="announcement"></textarea>
+
                                                 @error('announcement')
                                                 <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                    <strong>{{ $message }}</strong>
                                                 </span>
                                                 @enderror
                                             </div>
@@ -118,14 +121,18 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                            <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="0" name="show_to_employees" id="show_to_employees" />
-                                            <label class="form-check-label" for="flexRadioDefault1"> Show to Employee </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="1" name="show_to_employees" id="show_to_employees" checked />
-                                            <label class="form-check-label" for="flexRadioDefault2"> Do not show to Employee</label>
-                                        </div> 
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="0"
+                                                        name="show_to_employees" id="show_to_employees" />
+                                                    <label class="form-check-label" for="flexRadioDefault1"> Show to
+                                                        Employee </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="1"
+                                                        name="show_to_employees" id="show_to_employees" checked />
+                                                    <label class="form-check-label" for="flexRadioDefault2"> Do not show
+                                                        to Employee</label>
+                                                </div>
                                                 <!-- <div class="form-control-icon">
                                                 <i class="bi bi-person-square"></i>
                                                 </div> -->
@@ -133,91 +140,99 @@
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                                 @enderror
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
 
-                                  
+
                                     <input type="hidden" name="posted_id" value="1">
 
                                     <div class="col-12 d-flex justify-content-end">
-                                    <button class="btn btn-primary me-1 mb-1">Add</button>
-                                        <a  href="{{ route('announcement') }}"
-                                        class="btn btn-light-secondary me-1 mb-1">Back</a>
+                                        <button class="btn btn-primary me-1 mb-1">Add</button>
+                                        <a href="{{ route('announcement') }}"
+                                            class="btn btn-light-secondary me-1 mb-1">Back</a>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </form>
-                   
+
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-7 d-none d-lg-block">
-                <div id="auth-right">
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div id="auth-right">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+        @endsection
 
 
-@section('scripts')
-<script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
-<script>
-    ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-</script>
+        @section('scripts')
+        <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+        <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+        </script>
 
-<script>
-    var editor = new Quill('#editor', {
-    modules: {
-        toolbar: [
-            [{ 'header': [1, 2, 3, false] }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ],
-        imageDrop: true,
-        imageResize: {
-            displaySize: true
-        },
-    },
-    placeholder: 'Compose an epic...',
-    theme: 'snow'
-});
-
-// handle image upload
-editor.getModule('toolbar').addHandler('image', function() {
-    var input = document.createElement('input');
-    input.setAttribute('type', 'file');
-    input.setAttribute('accept', 'image/*');
-    input.onchange = function() {
-        var file = input.files[0];
-        var formData = new FormData();
-        formData.append('image', file);
-        formData.append('_token', '{{ csrf_token() }}');
-        $.ajax({
-            url: '/upload-image',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                var range = editor.getSelection(true);
-                editor.insertEmbed(range.index, 'image', response.url);
+        <script>
+        var editor = new Quill('#editor', {
+            modules: {
+                toolbar: [
+                    [{
+                        'header': [1, 2, 3, false]
+                    }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{
+                        'color': []
+                    }, {
+                        'background': []
+                    }],
+                    [{
+                        'align': []
+                    }],
+                    ['link', 'image'],
+                    ['clean']
+                ],
+                imageDrop: true,
+                imageResize: {
+                    displaySize: true
+                },
             },
-            error: function() {
-                alert('Could not upload image');
-            }
+            placeholder: 'Compose an epic...',
+            theme: 'snow'
         });
-    };
-    input.click();
-});
-</script>
-@endsection
+
+        // handle image upload
+        editor.getModule('toolbar').addHandler('image', function() {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.onchange = function() {
+                var file = input.files[0];
+                var formData = new FormData();
+                formData.append('image', file);
+                formData.append('_token', '{{ csrf_token() }}');
+                $.ajax({
+                    url: '/upload-image',
+                    method: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        var range = editor.getSelection(true);
+                        editor.insertEmbed(range.index, 'image', response.url);
+                    },
+                    error: function() {
+                        alert('Could not upload image');
+                    }
+                });
+            };
+            input.click();
+        });
+        </script>
+        @endsection
